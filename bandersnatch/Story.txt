@@ -8,3 +8,163 @@ You decide to enter the cave without knowing if you'll ever come out of it...
 
 
 >>>>>>>>
+
+Inside the cave you hear load screams and instantly regret you entered the cave. 
+You think to yourself "I should have listened to the weird man, maybe I should go back before it's too late". 
+But as you turn around to get out you realise it's already too late, the entrance is blocked.
+You now have no choice but to find another way out...
+
+>>>>>>>
+
+With help of the light of the flashlight you start walking. The screams seems to disappear for a while. 
+In front of you you meet a crossroad. You can either go right or left. Which way do you go?
+
+<<< LEFT >>>
+
+You chose the left path and keep on walking. Suddenly you stumble on something. 
+Should you take a look?
+
+<<< LEFT, YES >>>
+Underneath a pile of soil you find a purse. 
+You don't know the use of it but pick it up anyway. 
+
+<<< LEFT, NO >>>
+Keep on going forward. 
+
+<<< LEFT, YES/NO >>>
+You stop for a second as you see the passage is narrowing down. 
+At the same time the flashlight start to flicker, you can't see the end of the passage and wonder for how long you have to walk in this condition. 
+You think to yourself "Should I run the rest of the part? Or should I go back to find something more?".
+
+readline
+
+<<< LEFT, YES/NO, CONTINUE >>>
+You hope for the best and start to run. 
+
+The flashlight continues to flicker as you run through the narrow passage.
+When you see the end of the passage you also see smoke covering it. 
+Suddenly the flashlight dies. 
+What are you going to do? Start crawling or play it cool?
+
+<<< LEFT, YES/NO, CONTINUE, CRAWLING >>>
+After crawling for a while you see a red light in front of you. 
+You continue towards it and soon you see a pair of shoes. 
+As you look up you see the weird man you met outside the cave. 
+He starts to laugh and says "you can get up now".
+As you raise he follows it up with only two words "Receipt please".
+Do you now what he talks about?
+
+<<< LEFT, YES/NO, CONTINUE, CRAWLING, YES && receipt >>>
+If(receipt) {
+    Console.WriteLine("You remember the receipt from the bar and give it to the man.");
+
+    The receipt is visual and you need to spell the right buzzword. 
+    readline("");
+
+    if(buzzword == "true") {
+        Console.WriteLine("\"Enjoy! - weird man\"");
+        Console.WriteLine("The weird man opens a hidden door to let you in.");
+    }
+    else {
+        Console.WriteLine("Please try again");
+    }
+}
+<<< LEFT, YES/NO, CONTINUE, CRAWLING, YES && !receipt || NO>>>
+If(!receipt) {
+    Console.WriteLine("You don't know what he talks about");
+}
+You need to go back to the beginning.
+
+<<< LEFT, YES/NO, CONTINUE, PLAY IT COOL >>>
+After playing it cool for a while you see a red light in front of you. 
+You continue towards it soon you see the weird man you met outside the cave. 
+He also plays it cool and says only two words "Receipt please".
+Do you now what he talks about?
+
+<<< LEFT, YES/NO, CONTINUE, PLAY IT COOL, YES && receipt >>>
+If(receipt) {
+    Console.WriteLine("You remember the receipt from the bar and give it to the man.");
+
+    The receipt is visual and you need to spell the right buzzword. 
+    readline("");
+
+    if(buzzword == "true") {
+        Console.WriteLine("\"Enjoy! - weird man\"");
+        Console.WriteLine("The weird man opens a hidden door to let you in.");
+    }
+    else {
+        Console.WriteLine("Please try again");
+    }
+}
+
+<<< LEFT, YES/NO, CONTINUE, PLAY IT COOL, YES && !receipt || NO>>>
+If(!receipt) {
+    Console.WriteLine("You don't know what he talks about");
+}
+You need to go back to the beginning.
+
+<<< LEFT, YES/NO, CONTINUE, PLAY IT COOL || CRAWLING, YES && receipt >>>
+You walk through he door and meet deafening screams. 
+You now understand that it's a party going on.
+You chill for a bit before you recognize some people having a laugh in the corner. 
+You go over to see what's so funny. 
+It's a balloon machine. 
+You want to buy one. Do you have any money?
+
+<<< HAVE MONEY >>>
+You buy a balloon which takes you up...
+
+<<< DON'T HAVE MONEY >>>
+Unfortunally you don't have any coins. 
+Död?
+
+<<< LEFT, YES/NO, GO BACK >>>
+You come back to beginning. 
+
+<<< RIGHT >>>
+You walk from the screams. You are not ready yet!
+In the distance you see a light. 
+You follow it and find yourself in a bar. 
+The bar is empty, but you find a receipt. 
+You read it.
+
+Map of receipt visual. 
+
+You can't make any sense of it but put it in your pocket. 
+You can now either go forward or look more in the bar. 
+What do you do?
+
+<<< RIGHT, LOOK MORE IN THE BAR >>>
+if(purse) {
+    You find some coins in the old cashier and realise why you have the purse.
+    You put the coins in the purse and continues.
+}
+
+if(!purse) {
+    You find some coins in the old cashier but don't know where to put them.
+    You have to leave the cashier. 
+}
+
+if(looked twice) {
+    It's nothing left in the bar.
+}
+
+<<< RIGHT, FORWARD >>>
+You walk forward and hear the screams once again.
+You now have the choice to follow the screams or walk towards the scary silence. 
+Which way do you choose?
+
+<<< RIGHT, FORWARD, SCREAMS >>>
+Du hamnar i den vänstra korridoren?
+
+<<< RIGHT, FORWARD, SCARY SILENCE >>>
+The silence is creeping up on you. But you keep on walking.
+Suddenly the ground disappear under you feet. 
+You fall and fall until you find yourself at a party.
+There is no way out. 
+The only thing you can do is take drugs and die a slowly death. 
+You died. Back to start. 
+
+<<< ENDING >>>
+The next morning: 
+You wake up and realise you had the most fucked up dream ever! 
