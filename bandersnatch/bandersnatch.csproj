@@ -6,13 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-<<<<<<< Updated upstream
     <Compile Remove="Story.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Story.cs" />
-=======
-    <Compile Remove="purse.cs" />
->>>>>>> Stashed changes
   </ItemGroup>
 </Project>
