@@ -79,7 +79,11 @@ You need to go back to the beginning.
 After playing it cool for a while you see a red light in front of you. 
 You continue towards it soon you see the weird man you met outside the cave. 
 He also plays it cool and says only two words "Receipt please".
+<<<<<<< Updated upstream
 Do you now what he talks about?
+=======
+Do you know what he talks about?
+>>>>>>> Stashed changes
 
 <<< LEFT, YES/NO, CONTINUE, PLAY IT COOL, YES && receipt >>>
 If(receipt) {
