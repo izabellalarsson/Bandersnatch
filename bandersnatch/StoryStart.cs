@@ -4,10 +4,10 @@ namespace bandersnatch
     public class StoryStart
     {
         public bool HaveReceipt { get; set; }
-        public StoryStart()
-        {
+        //public StoryStart()
+        //{
 
-        }
+        //}
 
         public void whoAreYou()
         {

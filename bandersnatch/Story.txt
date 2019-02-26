@@ -108,7 +108,7 @@ If(!receipt) {
 You need to go back to the beginning.
 
 <<< LEFT, YES/NO, CONTINUE, PLAY IT COOL || CRAWLING, YES && receipt >>>
-You walk through he door and meet deafening screams. 
+You walk through the door and meet deafening screams. 
 You now understand that it's a party going on.
 You chill for a bit before you recognize some people having a laugh in the corner. 
 You go over to see what's so funny. 

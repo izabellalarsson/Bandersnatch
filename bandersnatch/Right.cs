@@ -1,7 +1,7 @@
 ﻿using System;
 namespace bandersnatch
 {
-    public class Right : StoryStart
+    public class Right
     {
         public bool HasReceipt = true;
 
@@ -13,7 +13,6 @@ namespace bandersnatch
         public void RightWay()
         {
             Console.WriteLine("You walk from the screams. You are not ready yet!\nIn the distance you see a light. \nYou follow it and find yourself in a bar. \nThe bar is empty, but you find a receipt. \nYou read it.\n\nMap of receipt visual. \n\nYou can't make any sense of it but put it in your pocket.");
-            HaveReceipt = true;
 
             Question();
         }

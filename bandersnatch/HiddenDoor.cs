@@ -1,7 +1,7 @@
 ﻿using System;
 namespace bandersnatch
 {
-    public class HiddenDoor : Right
+    public class HiddenDoor
     {
 
         //public HiddenDoor(bool HasReceipt) : base(HasReceipt) 
@@ -20,14 +20,14 @@ namespace bandersnatch
 
             if (UserInput == "yes")
             {
-                if (HaveReceipt)
-                {
-                    Console.WriteLine("hej");
-                }
-                else
-                {
-                    Console.WriteLine("dont know");
-                }
+                //if (HaveReceipt)
+                //{
+                //    Console.WriteLine("hej");
+                //}
+                //else
+                //{
+                //    Console.WriteLine("dont know");
+                //}
             }
         }
 

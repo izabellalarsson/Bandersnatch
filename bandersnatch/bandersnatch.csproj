@@ -5,4 +5,17 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="StoryStart.cs" />
+    <Compile Remove="leftOrRight.cs" />
+    <Compile Remove="Right.cs" />
+    <Compile Remove="ScreamOrSilence.cs" />
+    <Compile Remove="RunOrGoBack.cs" />
+    <Compile Remove="yesOrNo.cs" />
+    <Compile Remove="HiddenDoor.cs" />
+    <Compile Remove="CoolOrCrawl.cs" />
+    <Compile Remove="IReceipt.cs" />
+    <Compile Remove="Purse.cs" />
+    <Compile Remove="Receipt.cs" />
+  </ItemGroup>
 </Project>
