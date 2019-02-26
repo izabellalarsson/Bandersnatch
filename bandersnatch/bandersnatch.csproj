@@ -18,4 +18,7 @@
     <Compile Remove="Purse.cs" />
     <Compile Remove="Receipt.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Colorful.Console" Version="1.2.9" />
+  </ItemGroup>
 </Project>
