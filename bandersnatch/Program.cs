@@ -33,7 +33,6 @@ namespace bandersnatch
 
             var start = new Game();
             start.StoryStart();
-
         }
 
     }

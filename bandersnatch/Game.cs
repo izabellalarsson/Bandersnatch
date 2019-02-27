@@ -18,7 +18,6 @@ namespace bandersnatch
 
         public void StoryStart()
         {
-
             Console.WriteLine(".--------------------------------------------------.", Color.Cyan);
             Console.WriteLine("| .----------------------------------------------. |", Color.Cyan);
             Console.WriteLine("| |  The people of Winerfall has requested your  | |", Color.Cyan);
@@ -36,20 +35,21 @@ namespace bandersnatch
                 Console.WriteLine("\"Are you a Wizard or a Barbarian?\" - Weird man", Color.Yellow);
                 Console.WriteLine("[wizard] / [barbarian]", Color.Green);
                 Console.Write("> ");
+
                 var typeOfUser = Console.ReadLine().ToLower();
+
                 if (typeOfUser == "wizard" || typeOfUser == "barbarian")
                 {
                     user = $"{typeOfUser}";
                     Console.WriteLine("\"What's your name?\" - Weird man", Color.Yellow);
                     Console.Write("> ");
-                    var userName = Console.ReadLine();
+                    var userName = Console.ReadLine().ToLower();
                     Console.WriteLine();
                     Console.WriteLine($"\"Hello {typeOfUser} {userName}!", Color.Yellow);
                     Console.WriteLine("I fear this is a very scary and dark cave and you might never return ", Color.Yellow);
-                    Console.WriteLine("but I want to give you something that can help you in there.", Color.Yellow);
+                    Console.WriteLine("but I want to give you a flashlight that can help you in there.", Color.Yellow);
                     Console.WriteLine($"Here you go little {typeOfUser}.\" - Weird man", Color.Yellow);
                     Console.WriteLine();
-                    Console.WriteLine("The Weird man hands over a flashlight to you");
                 }
                 else
                 {
@@ -59,22 +59,25 @@ namespace bandersnatch
 
             Console.WriteLine(".---------------------------------------------------.", Color.Cyan);
             Console.WriteLine("| .-----------------------------------------------. |", Color.Cyan);
-            Console.WriteLine("| |  You decide to enter the cave without         | |", Color.Cyan);
-            Console.WriteLine("| |  knowing if you'll ever come out of it...     | |", Color.Cyan);
             Console.WriteLine("| |                                               | |", Color.Cyan);
-            Console.WriteLine("| |  Inside the cave you hear load screams and    | |", Color.Cyan);
-            Console.WriteLine("| |      instantly regret you entered it.         | |", Color.Cyan);
-            Console.WriteLine("| |    You turn around to get out but realise     | |", Color.Cyan);
+            Console.WriteLine("| |     You decide to enter the cave without      | |", Color.Cyan);
+            Console.WriteLine("| |    knowing if you'll ever come out of it...   | |", Color.Cyan);
+            Console.WriteLine("| |                                               | |", Color.Cyan);
+            Console.WriteLine("| |   Inside the cave you hear load screams and   | |", Color.Cyan);
+            Console.WriteLine("| |        instantly regret you entered it.       | |", Color.Cyan);
+            Console.WriteLine("| |     You turn around to get out but realise    | |", Color.Cyan);
             Console.WriteLine("| |it is alredy too late, the entrance is blocked.| |", Color.Cyan);
             Console.WriteLine("| |                                               | |", Color.Cyan);
-            Console.WriteLine("| |         You now have no choice but            | |", Color.Cyan);
-            Console.WriteLine("| |          to find another way out...           | |", Color.Cyan);
+            Console.WriteLine("| |           You now have no choice but          | |", Color.Cyan);
+            Console.WriteLine("| |            to find another way out...         | |", Color.Cyan);
             Console.WriteLine("| |                                               | |", Color.Cyan);
             Console.WriteLine("| | With help of the flashlight you start walking.| |", Color.Cyan);
             Console.WriteLine("| |  The screams seems to disappear for a while.  | |", Color.Cyan);
-            Console.WriteLine("| |       In front of you is a crossroad.         | |", Color.Cyan);
+            Console.WriteLine("| |        In front of you is a crossroad.        | |", Color.Cyan);
+            Console.WriteLine("| |                                               | |", Color.Cyan);
             Console.WriteLine("| '-----------------------------------------------' |", Color.Cyan);
             Console.WriteLine("'---------------------------------------------------'", Color.Cyan);
+
             WayQuest();
         }
 
@@ -87,6 +90,7 @@ namespace bandersnatch
                 Console.WriteLine("You can either go right or left. Which way do you go?");
                 Console.WriteLine("[left] / [right]", Color.Green);
                 Console.Write("> ");
+
                 var chosenWay = Console.ReadLine().ToLower();
 
                 if (chosenWay == "left")
@@ -106,8 +110,11 @@ namespace bandersnatch
 
         public void RightWay()
         {
+            Console.Clear();
+
             Console.WriteLine(".-------------------------------------------------------.", Color.Cyan);
             Console.WriteLine("| .---------------------------------------------------. |", Color.Cyan);
+            Console.WriteLine("| |                                                   | |", Color.Cyan);
             Console.WriteLine("| | You walk from the screams. You are not ready yet! | |", Color.Cyan);
             Console.WriteLine("| |         In the distance you see a light.          | |", Color.Cyan);
             Console.WriteLine("| |                                                   | |", Color.Cyan);
@@ -115,6 +122,7 @@ namespace bandersnatch
             Console.WriteLine("| |     The bar is empty, but you find a receipt.     | |", Color.Cyan);
             Console.WriteLine("| |                                                   | |", Color.Cyan);
             Console.WriteLine("| |                   You read it:                    | |", Color.Cyan);
+            Console.WriteLine("| |                                                   | |", Color.Cyan);
             Console.WriteLine("| '---------------------------------------------------' |", Color.Cyan);
             Console.WriteLine("'-------------------------------------------------------'", Color.Cyan);
 
@@ -146,7 +154,6 @@ namespace bandersnatch
             Console.WriteLine("                 ░              ", Color.Red);
             Console.WriteLine("                 ░  ░           ", Color.Red);
 
-
             Console.WriteLine(".-------------------------------------------------------------------.", Color.Cyan);
             Console.WriteLine("| .---------------------------------------------------------------. |", Color.Cyan);
             Console.WriteLine("| |                                                               | |", Color.Cyan);
@@ -160,6 +167,8 @@ namespace bandersnatch
 
         public void LeftWay()
         {
+            Console.Clear();
+
             Console.WriteLine(".--------------------------------------------------.", Color.Cyan);
             Console.WriteLine("| .----------------------------------------------. |", Color.Cyan);
             Console.WriteLine("| |                                              | |", Color.Cyan);
@@ -176,8 +185,11 @@ namespace bandersnatch
             if(!playerHasPurse)
             {
                 var notChosen = false;
+
                 while (!notChosen)
                 {
+                    Console.Clear();
+
                     Console.WriteLine(".----------------------------------------.", Color.Cyan);
                     Console.WriteLine("| .------------------------------------. |", Color.Cyan);
                     Console.WriteLine("| |                                    | |", Color.Cyan);
@@ -189,12 +201,16 @@ namespace bandersnatch
                     Console.WriteLine("Should you take a look?");
                     Console.WriteLine("[yes] / [no]", Color.Green);
                     Console.Write("> ");
+
                     var userInput = Console.ReadLine().ToLower();
                     
                     if (userInput == "yes")
                     {
                         notChosen = true;
+
                         YesWay();
+
+                        Console.Clear();
 
                         Console.WriteLine(".---------------------------------------------------------------------.", Color.Cyan);
                         Console.WriteLine("| .-----------------------------------------------------------------. |", Color.Cyan);
@@ -202,7 +218,7 @@ namespace bandersnatch
                         Console.WriteLine("| | You stop for a second as you see the passage is narrowing down. | |", Color.Cyan);
                         Console.WriteLine("| |      At the same time the flashlight start to flicker,          | |", Color.Cyan);
                         Console.WriteLine("| |       you can't see the end of the passage and wonder           | |", Color.Cyan);
-                        Console.WriteLine("| |       for how long you have to walk in this condition           | |", Color.Cyan);
+                        Console.WriteLine("| |       for how long you have to walk in this condition.          | |", Color.Cyan);
                         Console.WriteLine("| |                                                                 | |", Color.Cyan);
                         Console.WriteLine("| '-----------------------------------------------------------------' |", Color.Cyan);
                         Console.WriteLine("'---------------------------------------------------------------------'", Color.Cyan);
@@ -212,7 +228,10 @@ namespace bandersnatch
                     else if (userInput == "no")
                     {
                         notChosen = true;
+
                         NoWay();
+
+                        Console.Clear();
 
                         Console.WriteLine(".---------------------------------------------------------------------.", Color.Cyan);
                         Console.WriteLine("| .-----------------------------------------------------------------. |", Color.Cyan);
@@ -228,6 +247,9 @@ namespace bandersnatch
                         RunOrBackQuest();
                     }
                 }
+
+            }
+            else {
                 RunOrBackQuest();
             }
         }
@@ -235,6 +257,8 @@ namespace bandersnatch
         public void YesWay()
         {
             playerHasPurse = true;
+
+            Console.Clear();
 
             Console.WriteLine(".---------------------------------------------------------.", Color.Cyan);
             Console.WriteLine("| .-----------------------------------------------------. |", Color.Cyan);
@@ -248,6 +272,8 @@ namespace bandersnatch
 
         public void NoWay()
         {
+            Console.Clear();
+
             Console.WriteLine(".-------------------------------------.", Color.Cyan);
             Console.WriteLine("| .---------------------------------. |", Color.Cyan);
             Console.WriteLine("| |                                 | |", Color.Cyan);
@@ -263,13 +289,16 @@ namespace bandersnatch
 
             while (!notChosen)
             {
-                Console.WriteLine("\nYou think to yourself \"Should I run the rest of the part? Or should I go back to find something more?\".");
+                Console.WriteLine("Should you run the rest of the part or go back to see if you can find something more?");
                 Console.WriteLine("[run] / [back]", Color.Green);
                 Console.Write("> ");
+
                 var userInput = Console.ReadLine().ToLower();
 
                 if (userInput == "run")
                 {
+                    Console.Clear();
+
                     Console.WriteLine(".--------------------------------------------------------------------------------.", Color.Cyan);
                     Console.WriteLine("| .----------------------------------------------------------------------------. |", Color.Cyan);
                     Console.WriteLine("| |                                                                            | |", Color.Cyan);
@@ -280,12 +309,16 @@ namespace bandersnatch
                     Console.WriteLine("| |                                                                            | |", Color.Cyan);
                     Console.WriteLine("| '----------------------------------------------------------------------------' |", Color.Cyan);
                     Console.WriteLine("'--------------------------------------------------------------------------------'", Color.Cyan); notChosen = true;
+
                     CoolOrCrawlQuest();
 
                 }
                 else if (userInput == "back")
                 {
                     notChosen = true;
+
+                    Console.Clear();
+
                     Console.WriteLine(".-------------------------------------.", Color.Cyan);
                     Console.WriteLine("| .---------------------------------. |", Color.Cyan);
                     Console.WriteLine("| |                                 | |", Color.Cyan);
@@ -293,6 +326,7 @@ namespace bandersnatch
                     Console.WriteLine("| |                                 | |", Color.Cyan);
                     Console.WriteLine("| '---------------------------------' |", Color.Cyan);
                     Console.WriteLine("'-------------------------------------'", Color.Cyan);
+
                     WayQuest();
 
                 }
@@ -309,10 +343,14 @@ namespace bandersnatch
                 Console.WriteLine("What are you going to do? Start crawling or play it cool?");
                 Console.WriteLine("[crawl] / [cool]", Color.Green);
                 Console.Write("> ");
+
                 var userInput = Console.ReadLine().ToLower();
                 
                 if (userInput == "crawl")
                 {
+                    notChosen = true;
+
+                    Console.Clear();
 
                     Console.WriteLine(".--------------------------------------------------------------------.", Color.Cyan);
                     Console.WriteLine("| .----------------------------------------------------------------. |", Color.Cyan);
@@ -327,13 +365,16 @@ namespace bandersnatch
                     Console.WriteLine("'--------------------------------------------------------------------'", Color.Cyan);
 
                     Console.WriteLine("\"Receipt, please.\"", Color.Yellow);
-                    notChosen = true;
+
                     ManQuest();
 
                 }
                 else if (userInput == "cool")
                 {
                     notChosen = true;
+
+                    Console.Clear();
+
                     Console.WriteLine(".--------------------------------------------------------------------------------------.", Color.Cyan);
                     Console.WriteLine("| .----------------------------------------------------------------------------------. |", Color.Cyan);
                     Console.WriteLine("| |                                                                                  | |", Color.Cyan);
@@ -344,7 +385,9 @@ namespace bandersnatch
                     Console.WriteLine("| |                                                                                  | |", Color.Cyan);
                     Console.WriteLine("| '----------------------------------------------------------------------------------' |", Color.Cyan);
                     Console.WriteLine("'--------------------------------------------------------------------------------------'", Color.Cyan);
+
                     Console.WriteLine("\"Receipt, please.\"", Color.Yellow);
+
                     ManQuest();
                 }
             }
@@ -359,13 +402,17 @@ namespace bandersnatch
                 Console.WriteLine("Do you know what he talks about?");
                 Console.WriteLine("[yes] / [no]", Color.Green);
                 Console.Write("> ");
-                var UserInput = Console.ReadLine().ToLower();
 
-                if (UserInput == "yes")
+                var userInput = Console.ReadLine().ToLower();
+
+                if (userInput == "yes")
                 {
                     notChosen = true;
+
                     if (playerHasReceipt)
                     {
+                        Console.Clear();
+
                         Console.WriteLine(".-------------------------------------------------------------------.", Color.Cyan);
                         Console.WriteLine("| .---------------------------------------------------------------. |", Color.Cyan);
                         Console.WriteLine("| |                                                               | |", Color.Cyan);
@@ -402,16 +449,18 @@ namespace bandersnatch
                         Console.WriteLine("                 ░  ░           ", Color.Red);
 
                         Console.WriteLine("\"You need to spell the right buzzword.\" - Weird man", Color.Yellow);
-                        var buzzword = Console.ReadLine();
 
+                        var buzzword = Console.ReadLine();
 
                         while (buzzword != "true")
                         {                         
                             Console.WriteLine("Please try again");
-                            buzzword = Console.ReadLine();
+                            buzzword = Console.ReadLine().ToLower();
                         }
 
                         Console.WriteLine("\"Enjoy! - Weird man\"", Color.Yellow);
+
+                        Console.Clear();
 
                         Console.WriteLine(".------------------------------------------------------.", Color.Cyan);
                         Console.WriteLine("| .--------------------------------------------------. |", Color.Cyan);
@@ -425,6 +474,8 @@ namespace bandersnatch
                     }
                     else
                     {
+                        Console.Clear();
+
                         Console.WriteLine(".-------------------------------------------.", Color.Cyan);
                         Console.WriteLine("| .---------------------------------------. |", Color.Cyan);
                         Console.WriteLine("| |                                       | |", Color.Cyan);
@@ -437,9 +488,12 @@ namespace bandersnatch
                         WayQuest();
                     }
                 }
-                else if( UserInput == "no")
+                else if(userInput == "no")
                 {
                     notChosen = true;
+
+                    Console.Clear();
+
                     Console.WriteLine(".-------------------------------------------.", Color.Cyan);
                     Console.WriteLine("| .---------------------------------------. |", Color.Cyan);
                     Console.WriteLine("| |                                       | |", Color.Cyan);
@@ -455,6 +509,8 @@ namespace bandersnatch
 
         public void PartyWay()
         {
+            Console.Clear();
+
             Console.WriteLine(".----------------------------------------------------------------------------------------.", Color.Cyan);
             Console.WriteLine("| .------------------------------------------------------------------------------------. |", Color.Cyan);
             Console.WriteLine("| |                                                                                    | |", Color.Cyan);
@@ -477,13 +533,17 @@ namespace bandersnatch
             {
                 Console.WriteLine("You want to buy one. Do you have any money?");
                 Console.WriteLine("[yes] / [no]", Color.Green);
-                var userInput = Console.ReadLine();
+
+                var userInput = Console.ReadLine().ToLower();
 
                 if(userInput == "yes")
                 {
                     if(playerHasPurse && playerHasMoney)
                     {
                         notChosen = true;
+
+                        Console.Clear();
+
                         Console.WriteLine(".---------------------------------------------.", Color.Cyan);
                         Console.WriteLine("| .-----------------------------------------. |", Color.Cyan);
                         Console.WriteLine("| |                                         | |", Color.Cyan);
@@ -497,6 +557,9 @@ namespace bandersnatch
                     else if (playerHasPurse && !playerHasMoney)
                     {
                         notChosen = true;
+
+                        Console.Clear();
+
                         Console.WriteLine(".---------------------------------------------.", Color.Cyan);
                         Console.WriteLine("| .-----------------------------------------. |", Color.Cyan);
                         Console.WriteLine("| |                                         | |", Color.Cyan);
@@ -511,6 +574,10 @@ namespace bandersnatch
                 }
                 else if (userInput == "no")
                 {
+                    notChosen = true;
+
+                    Console.Clear();
+
                     Console.WriteLine(".--------------------------------------------------------------------.", Color.Cyan);
                     Console.WriteLine("| .----------------------------------------------------------------. |", Color.Cyan);
                     Console.WriteLine("| |                                                                | |", Color.Cyan);
@@ -535,9 +602,13 @@ namespace bandersnatch
                 Console.WriteLine("You can now either go forward or look more in the bar. \nWhat do you do?");
                 Console.WriteLine("[forward] / [look]", Color.Green);
                 Console.Write("> ");
-                var userInput = Console.ReadLine();
+
+                var userInput = Console.ReadLine().ToLower();
+
                 if (userInput == "forward")
                 {
+                    Console.Clear();
+
                     Console.WriteLine(".-------------------------------------------------------.", Color.Cyan);
                     Console.WriteLine("| .---------------------------------------------------. |", Color.Cyan);
                     Console.WriteLine("| |                                                   | |", Color.Cyan);
@@ -547,7 +618,9 @@ namespace bandersnatch
                     Console.WriteLine("| |                                                   | |", Color.Cyan);
                     Console.WriteLine("| '---------------------------------------------------' |", Color.Cyan);
                     Console.WriteLine("'-------------------------------------------------------'", Color.Cyan); 
+
                     notChosen = true;
+
                     SoundQuest();
 
                 }
@@ -569,16 +642,19 @@ namespace bandersnatch
                 Console.WriteLine("Which way do you choose?");
                 Console.WriteLine("[scream] / [silence]", Color.Green);
                 Console.Write("> ");
+
                 var userInput = Console.ReadLine().ToLower();
+
                 if (userInput == "scream")
                 {
                     notChosen = true;
-                    ScreamWay();
 
+                    ScreamWay();
                 }
                 else if (userInput == "silence")
                 {
                     notChosen = true;
+
                     SilenceWay();
                 }
             }
@@ -586,6 +662,8 @@ namespace bandersnatch
 
         public void SilenceWay()
         {
+            Console.Clear();
+
             Console.WriteLine(".----------------------------------------------------------------------.", Color.Cyan);
             Console.WriteLine("| .------------------------------------------------------------------. |", Color.Cyan);
             Console.WriteLine("| |                                                                  | |", Color.Cyan);
@@ -608,25 +686,64 @@ namespace bandersnatch
             if(playerHasPurse)
             {
                 playerHasMoney = true;
-                Console.WriteLine("You find some coins in the old cashier and realise why you have the purse.\n You put the coins in the purse and continues.");
+
+                Console.Clear();
+
+                Console.WriteLine(".--------------------------------------------------------------------------------.", Color.Cyan);
+                Console.WriteLine("| .----------------------------------------------------------------------------. |", Color.Cyan);
+                Console.WriteLine("| |                                                                            | |", Color.Cyan);
+                Console.WriteLine("| | You find some coins in the old cashier and realise why you have the purse. | |", Color.Cyan);
+                Console.WriteLine("| |               You put the coins in the purse and continues.                | |", Color.Cyan);
+                Console.WriteLine("| |                                                                            | |", Color.Cyan);
+                Console.WriteLine("| '----------------------------------------------------------------------------' |", Color.Cyan);
+                Console.WriteLine("'--------------------------------------------------------------------------------'", Color.Cyan); 
+
                 SoundQuest();
             }
             else
             {
-                Console.WriteLine("You find some coins in the old cashier but don't know where to put them.\n You have to leave the cashier.");
+                Console.Clear();
+
+                Console.WriteLine(".-----------------------------------------------.", Color.Cyan);
+                Console.WriteLine("| .-------------------------------------------. |", Color.Cyan);
+                Console.WriteLine("| |                                           | |", Color.Cyan);
+                Console.WriteLine("| |   You find some coins in the old cashier  | |", Color.Cyan);
+                Console.WriteLine("| |      but don't know where to put them.    | |", Color.Cyan);
+                Console.WriteLine("| |       You have to leave the cashier.      | |", Color.Cyan);
+                Console.WriteLine("| |                                           | |", Color.Cyan);
+                Console.WriteLine("| '-------------------------------------------' |", Color.Cyan);
+                Console.WriteLine("'-----------------------------------------------'", Color.Cyan);
+
                 SoundQuest();
             }
         }
 
         public void ScreamWay()
         {
-            Console.WriteLine("There's a door on your left. You open it.");
+            Console.Clear();
+
+            Console.WriteLine(".-----------------------------------------------.", Color.Cyan);
+            Console.WriteLine("| .-------------------------------------------. |", Color.Cyan);
+            Console.WriteLine("| |                                           | |", Color.Cyan);
+            Console.WriteLine("| | There's a door on your left. You open it. | |", Color.Cyan);
+            Console.WriteLine("| |                                           | |", Color.Cyan);
+            Console.WriteLine("| '-------------------------------------------' |", Color.Cyan);
+            Console.WriteLine("'-----------------------------------------------'", Color.Cyan); 
+
             LeftWay();
         }
 
         public void StoryEnd()
         {
-            Console.WriteLine("The next morning: You wake up and realise you had the most fucked up dream ever!");
+            Console.WriteLine(".--------------------------------------------------------------------.", Color.DarkRed);
+            Console.WriteLine("| .----------------------------------------------------------------. |", Color.DarkRed);
+            Console.WriteLine("| |                                                                | |", Color.DarkRed);
+            Console.WriteLine("| |                      The next morning:                         | |", Color.DarkRed);
+            Console.WriteLine("| |                                                                | |", Color.DarkRed);
+            Console.WriteLine("| | You wake up and realise you had the most fucked up dream ever! | |", Color.DarkRed);
+            Console.WriteLine("| |                                                                | |", Color.DarkRed);
+            Console.WriteLine("| '----------------------------------------------------------------' |", Color.DarkRed);
+            Console.WriteLine("'--------------------------------------------------------------------'", Color.DarkRed);
         }
 
     }
