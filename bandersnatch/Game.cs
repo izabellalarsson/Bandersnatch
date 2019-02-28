@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Drawing;
 using Console = Colorful.Console;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace bandersnatch
 {
-    public class Game
+
+
+    public class Game : Quests
     {
         public bool playerHasReceipt = false;
         public bool playerHasPurse = false;
@@ -38,20 +42,97 @@ namespace bandersnatch
         
         }
 
+        static void PrintQuest(List<string> text)
+        {
+            // Räkna ut den längsta radens längd
+            var longestRow = text.OrderByDescending(x => x.Length).First().Length + 8;
+
+            // Rita ut första raderna
+            var topConers = ".";
+            var topLeftCorner = "| .";
+            var topRightCorner = ". |";
+            var bottomLeftCorner = "| '";
+            var bottomRightCorner = "' |"; 
+            var bottomCorners = "'";
+            var leftSide = "| | ";
+            var rightSide = " | |";
+            //var topLine = $"{topConers}";
+
+            //Console.Write(topConers);
+
+            foreach (var dash in topConers)
+            {
+                var topLineLenght = longestRow - 2;
+                var secondLineLength = longestRow - 6;
+                var dashes = new string('-', topLineLenght);
+                var secondDashes = new string('-', secondLineLength);
+
+                var topLine = $"{topConers}{dashes}{topConers}";
+                var secondLine = $"{topLeftCorner}{secondDashes}{topRightCorner}";
+                Console.WriteLine(topLine, Color.Cyan);
+                Console.WriteLine(secondLine, Color.Cyan);
+
+            }
+
+            foreach (var line in text)
+            {
+                var lineLenght = line.Length;
+                var margin = longestRow - lineLenght - 8;
+                var spaces = new string(' ', margin / 2);
+                var currentLine = $"{leftSide}{spaces}{line}{spaces}{rightSide}";
+
+                Console.WriteLine(currentLine, Color.Cyan);
+
+            }
+
+            foreach (var dash in bottomCorners)
+            {
+                var bottomLineLenght = longestRow - 2;
+                var secondLineLength = longestRow - 6;
+                var dashes = new string('-', bottomLineLenght);
+                var secondDashes = new string('-', secondLineLength);
+
+                var topLine = $"{bottomCorners}{dashes}{bottomCorners}";
+                var secondLine = $"{bottomLeftCorner}{secondDashes}{bottomRightCorner}";
+                Console.WriteLine(secondLine, Color.Cyan);
+                Console.WriteLine(topLine, Color.Cyan);
+            }
+
+            /*for (var j = 0; j < text.Count; j++)
+            {
+                for (var i = 0; i < longestRow; i++)
+                {
+                    var space = " ";
+
+
+                    Console.Write(String.Format("{0," + ((longestRow / 2) + (space.Length / 2)) + "}", space));
+
+                }
+                Console.WriteLine(text[j]);
+            }*/
+
+
+
+            // Loopa över raderna i text
+            // Ta bredden minus radens längd
+            // lämna loop - skriv ut sista två rader
+        }
+
         public void StoryStart()
         {
             Console.Clear();
-            Console.WriteLine(".--------------------------------------------------.", Color.Cyan);
-            Console.WriteLine("| .----------------------------------------------. |", Color.Cyan);
-            Console.WriteLine("| |  The people of Winterfall has requested your | |", Color.Cyan);
-            Console.WriteLine("| |  help to enter the big and scary cave.       | |", Color.Cyan);
-            Console.WriteLine("| |                                              | |", Color.Cyan);
-            Console.WriteLine("| |              You accept the quest.           | |", Color.Cyan);
-            Console.WriteLine("| |                                              | |", Color.Cyan);
-            Console.WriteLine("| |  Outside you meet a man, he warns you to     | |", Color.Cyan);
-            Console.WriteLine("| |  enter the cave and ask you who you are.     | |", Color.Cyan);
-            Console.WriteLine("| '----------------------------------------------' |", Color.Cyan);
-            Console.WriteLine("'--------------------------------------------------'", Color.Cyan);
+            PrintQuest(Intro);
+            //Console.WriteLine(".--------------------------------------------------.", Color.Cyan);
+            //Console.WriteLine("| .----------------------------------------------. |", Color.Cyan);
+            //Console.WriteLine("| |  The people of Winterfall has requested your | |", Color.Cyan);
+            //Console.WriteLine("| |  help to enter the big and scary cave.       | |", Color.Cyan);
+            //Console.WriteLine("| |                                              | |", Color.Cyan);
+            //Console.WriteLine("| |              You accept the quest.           | |", Color.Cyan);
+            //Console.WriteLine("| |                                              | |", Color.Cyan);
+            //Console.WriteLine("| |  Outside you meet a man, he warns you to     | |", Color.Cyan);
+            //Console.WriteLine("| |  enter the cave and ask you who you are.     | |", Color.Cyan);
+            //Console.WriteLine("| '----------------------------------------------' |", Color.Cyan);
+            //Console.WriteLine("'--------------------------------------------------'", Color.Cyan);
 
             while (user == "human")
             {
@@ -72,26 +153,28 @@ namespace bandersnatch
                 }
             }
 
-            Console.WriteLine(".---------------------------------------------------.", Color.Cyan);
-            Console.WriteLine("| .-----------------------------------------------. |", Color.Cyan);
-            Console.WriteLine("| |                                               | |", Color.Cyan);
-            Console.WriteLine("| |     You decide to enter the cave without      | |", Color.Cyan);
-            Console.WriteLine("| |    knowing if you'll ever come out of it...   | |", Color.Cyan);
-            Console.WriteLine("| |                                               | |", Color.Cyan);
-            Console.WriteLine("| |   Inside the cave you hear loud screams and   | |", Color.Cyan);
-            Console.WriteLine("| |        instantly regret you entered it.       | |", Color.Cyan);
-            Console.WriteLine("| |     You turn around to get out but realise    | |", Color.Cyan);
-            Console.WriteLine("| |it is alredy too late, the entrance is blocked.| |", Color.Cyan);
-            Console.WriteLine("| |                                               | |", Color.Cyan);
-            Console.WriteLine("| |           You now have no choice but          | |", Color.Cyan);
-            Console.WriteLine("| |            to find another way out...         | |", Color.Cyan);
-            Console.WriteLine("| |                                               | |", Color.Cyan);
-            Console.WriteLine("| | With help of the flashlight you start walking.| |", Color.Cyan);
-            Console.WriteLine("| |  The screams seems to disappear for a while.  | |", Color.Cyan);
-            Console.WriteLine("| |        In front of you is a crossroad.        | |", Color.Cyan);
-            Console.WriteLine("| |                                               | |", Color.Cyan);
-            Console.WriteLine("| '-----------------------------------------------' |", Color.Cyan);
-            Console.WriteLine("'---------------------------------------------------'", Color.Cyan);
+            PrintQuest(Intro2);
+
+            //Console.WriteLine(".---------------------------------------------------.", Color.Cyan);
+            //Console.WriteLine("| .-----------------------------------------------. |", Color.Cyan);
+            //Console.WriteLine("| |                                               | |", Color.Cyan);
+            //Console.WriteLine("| |     You decide to enter the cave without      | |", Color.Cyan);
+            //Console.WriteLine("| |    knowing if you'll ever come out of it...   | |", Color.Cyan);
+            //Console.WriteLine("| |                                               | |", Color.Cyan);
+            //Console.WriteLine("| |   Inside the cave you hear loud screams and   | |", Color.Cyan);
+            //Console.WriteLine("| |        instantly regret you entered it.       | |", Color.Cyan);
+            //Console.WriteLine("| |     You turn around to get out but realise    | |", Color.Cyan);
+            //Console.WriteLine("| |it is alredy too late, the entrance is blocked.| |", Color.Cyan);
+            //Console.WriteLine("| |                                               | |", Color.Cyan);
+            //Console.WriteLine("| |           You now have no choice but          | |", Color.Cyan);
+            //Console.WriteLine("| |            to find another way out...         | |", Color.Cyan);
+            //Console.WriteLine("| |                                               | |", Color.Cyan);
+            //Console.WriteLine("| | With help of the flashlight you start walking.| |", Color.Cyan);
+            //Console.WriteLine("| |  The screams seems to disappear for a while.  | |", Color.Cyan);
+            //Console.WriteLine("| |        In front of you is a crossroad.        | |", Color.Cyan);
+            //Console.WriteLine("| |                                               | |", Color.Cyan);
+            //Console.WriteLine("| '-----------------------------------------------' |", Color.Cyan);
+            //Console.WriteLine("'---------------------------------------------------'", Color.Cyan);
 
             WayQuest();
         }

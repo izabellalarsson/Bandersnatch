@@ -35,6 +35,7 @@ namespace bandersnatch
             Console.WriteLine("Press <Enter> to start the game");
             var start = new Game();
 
+           
             if(Console.ReadKey().Key == ConsoleKey.Enter)
             {
                 start.StoryStart();
