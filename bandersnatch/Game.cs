@@ -2,7 +2,7 @@
 using System.Drawing;
 using Console = Colorful.Console;
 
-namespace bandersnatch_2
+namespace bandersnatch
 {
     public class Game
     {
@@ -40,6 +40,7 @@ namespace bandersnatch_2
 
         public void StoryStart()
         {
+            Console.Clear();
             Console.WriteLine(".--------------------------------------------------.", Color.Cyan);
             Console.WriteLine("| .----------------------------------------------. |", Color.Cyan);
             Console.WriteLine("| |  The people of Winterfall has requested your | |", Color.Cyan);
@@ -198,8 +199,6 @@ namespace bandersnatch_2
 
                 while (!notChosen)
                 {
-                    Console.Clear();
-
                     Console.WriteLine(".----------------------------------------.", Color.Cyan);
                     Console.WriteLine("| .------------------------------------. |", Color.Cyan);
                     Console.WriteLine("| |                                    | |", Color.Cyan);
@@ -215,9 +214,7 @@ namespace bandersnatch_2
                         notChosen = true;
 
                         YesWay();
-
-                        Console.Clear();
-
+                        
                         Console.WriteLine(".---------------------------------------------------------------------.", Color.Cyan);
                         Console.WriteLine("| .-----------------------------------------------------------------. |", Color.Cyan);
                         Console.WriteLine("| |                                                                 | |", Color.Cyan);
@@ -236,9 +233,7 @@ namespace bandersnatch_2
                         notChosen = true;
 
                         NoWay();
-
-                        Console.Clear();
-
+                        
                         Console.WriteLine(".---------------------------------------------------------------------.", Color.Cyan);
                         Console.WriteLine("| .-----------------------------------------------------------------. |", Color.Cyan);
                         Console.WriteLine("| |                                                                 | |", Color.Cyan);
@@ -504,8 +499,6 @@ namespace bandersnatch_2
 
         public void PartyWay()
         {
-            Console.Clear();
-
             Console.WriteLine(".----------------------------------------------------------------------------------------.", Color.Cyan);
             Console.WriteLine("| .------------------------------------------------------------------------------------. |", Color.Cyan);
             Console.WriteLine("| |                                                                                    | |", Color.Cyan);
@@ -728,6 +721,21 @@ namespace bandersnatch_2
             Console.WriteLine("| |                                                                | |", Color.DarkRed);
             Console.WriteLine("| '----------------------------------------------------------------' |", Color.DarkRed);
             Console.WriteLine("'--------------------------------------------------------------------'", Color.DarkRed);
+
+            RestartGame();
+        }
+
+        public void RestartGame()
+        {
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Press <Enter> to restart the game");
+
+            if (Console.ReadKey().Key == ConsoleKey.Enter)
+            {
+                StoryStart();
+            }
         }
 
     }

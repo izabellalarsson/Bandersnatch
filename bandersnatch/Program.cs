@@ -31,8 +31,14 @@ namespace bandersnatch
             Console.WriteLine("╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝   ╚═╝    ╚═════╝╚═╝  ╚═╝", Color.Yellow);
             Console.WriteLine("                                                   ");
 
+
+            Console.WriteLine("Press <Enter> to start the game");
             var start = new Game();
-            start.StoryStart();
+
+            if(Console.ReadKey().Key == ConsoleKey.Enter)
+            {
+                start.StoryStart();
+            }
         }
 
     }
