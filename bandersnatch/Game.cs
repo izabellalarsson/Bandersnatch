@@ -2,7 +2,7 @@
 using System.Drawing;
 using Console = Colorful.Console;
 
-namespace bandersnatch
+namespace bandersnatch_2
 {
     public class Game
     {
@@ -16,11 +16,33 @@ namespace bandersnatch
             
         }
 
+        static string ReadQuest(string prompt, string value1, string value2, string error)
+        {
+            while(true)
+            {
+                Console.WriteLine(prompt);
+                Console.WriteLine("[" + value1 + "] / [" + value2 + "]", Color.Green);
+                Console.Write("> ");
+
+                var userInput = Console.ReadLine().ToLower();
+
+                if(userInput == value1 || userInput == value2)
+                {
+                    return userInput;
+                }
+
+                Console.WriteLine(error);
+
+                return userInput;
+            }
+        
+        }
+
         public void StoryStart()
         {
             Console.WriteLine(".--------------------------------------------------.", Color.Cyan);
             Console.WriteLine("| .----------------------------------------------. |", Color.Cyan);
-            Console.WriteLine("| |  The people of Winerfall has requested your  | |", Color.Cyan);
+            Console.WriteLine("| |  The people of Winterfall has requested your | |", Color.Cyan);
             Console.WriteLine("| |  help to enter the big and scary cave.       | |", Color.Cyan);
             Console.WriteLine("| |                                              | |", Color.Cyan);
             Console.WriteLine("| |              You accept the quest.           | |", Color.Cyan);
@@ -32,11 +54,7 @@ namespace bandersnatch
 
             while (user == "human")
             {
-                Console.WriteLine("\"Are you a Wizard or a Barbarian?\" - Weird man", Color.Yellow);
-                Console.WriteLine("[wizard] / [barbarian]", Color.Green);
-                Console.Write("> ");
-
-                var typeOfUser = Console.ReadLine().ToLower();
+                var typeOfUser = ReadQuest("\"Are you a Wizard or a Barbarian?\" - Weird man", "wizard", "barbarian", "\"As weird as it look you must be something else than a human!\" - Weird man");
 
                 if (typeOfUser == "wizard" || typeOfUser == "barbarian")
                 {
@@ -51,10 +69,6 @@ namespace bandersnatch
                     Console.WriteLine($"Here you go little {typeOfUser}.\" - Weird man", Color.Yellow);
                     Console.WriteLine();
                 }
-                else
-                {
-                    Console.WriteLine($"\"As weird as it look you must be something else than a {typeOfUser}\" - Weird man", Color.Yellow);
-                }
             }
 
             Console.WriteLine(".---------------------------------------------------.", Color.Cyan);
@@ -63,7 +77,7 @@ namespace bandersnatch
             Console.WriteLine("| |     You decide to enter the cave without      | |", Color.Cyan);
             Console.WriteLine("| |    knowing if you'll ever come out of it...   | |", Color.Cyan);
             Console.WriteLine("| |                                               | |", Color.Cyan);
-            Console.WriteLine("| |   Inside the cave you hear load screams and   | |", Color.Cyan);
+            Console.WriteLine("| |   Inside the cave you hear loud screams and   | |", Color.Cyan);
             Console.WriteLine("| |        instantly regret you entered it.       | |", Color.Cyan);
             Console.WriteLine("| |     You turn around to get out but realise    | |", Color.Cyan);
             Console.WriteLine("| |it is alredy too late, the entrance is blocked.| |", Color.Cyan);
@@ -87,11 +101,7 @@ namespace bandersnatch
 
             while (!notChosen)
             {
-                Console.WriteLine("You can either go right or left. Which way do you go?");
-                Console.WriteLine("[left] / [right]", Color.Green);
-                Console.Write("> ");
-
-                var chosenWay = Console.ReadLine().ToLower();
+                var chosenWay = ReadQuest("You can either go right or left. Which way do you go?", "left", "right", "Sorry, but that is not an alternative");
 
                 if (chosenWay == "left")
                 {
@@ -198,12 +208,8 @@ namespace bandersnatch
                     Console.WriteLine("| '------------------------------------' |", Color.Cyan);
                     Console.WriteLine("'----------------------------------------'", Color.Cyan);
 
-                    Console.WriteLine("Should you take a look?");
-                    Console.WriteLine("[yes] / [no]", Color.Green);
-                    Console.Write("> ");
+                    var userInput = ReadQuest("Should you take a look?", "yes", "no", "Sorry, but that is not an alternative");
 
-                    var userInput = Console.ReadLine().ToLower();
-                    
                     if (userInput == "yes")
                     {
                         notChosen = true;
@@ -289,11 +295,7 @@ namespace bandersnatch
 
             while (!notChosen)
             {
-                Console.WriteLine("Should you run the rest of the part or go back to see if you can find something more?");
-                Console.WriteLine("[run] / [back]", Color.Green);
-                Console.Write("> ");
-
-                var userInput = Console.ReadLine().ToLower();
+                var userInput = ReadQuest("Should you run the rest of the part or go back to see if you can find something more?", "run", "back", "Sorry, but that is not an alternative");
 
                 if (userInput == "run")
                 {
@@ -308,7 +310,9 @@ namespace bandersnatch
                     Console.WriteLine("| |                  Suddenly the flashlight dies.                             | |", Color.Cyan);
                     Console.WriteLine("| |                                                                            | |", Color.Cyan);
                     Console.WriteLine("| '----------------------------------------------------------------------------' |", Color.Cyan);
-                    Console.WriteLine("'--------------------------------------------------------------------------------'", Color.Cyan); notChosen = true;
+                    Console.WriteLine("'--------------------------------------------------------------------------------'", Color.Cyan); 
+
+                    notChosen = true;
 
                     CoolOrCrawlQuest();
 
@@ -340,11 +344,7 @@ namespace bandersnatch
 
             while (!notChosen)
             {
-                Console.WriteLine("What are you going to do? Start crawling or play it cool?");
-                Console.WriteLine("[crawl] / [cool]", Color.Green);
-                Console.Write("> ");
-
-                var userInput = Console.ReadLine().ToLower();
+                var userInput = ReadQuest("What are you going to do? Start crawling or play it cool?", "crawl", "cool", "Sorry, but that is not an alternative");
                 
                 if (userInput == "crawl")
                 {
@@ -380,7 +380,6 @@ namespace bandersnatch
                     Console.WriteLine("| |                                                                                  | |", Color.Cyan);
                     Console.WriteLine("| |     After playing it cool for a while you see a red light in front of you        | |", Color.Cyan);
                     Console.WriteLine("| | You continue towards it and soon you see the weird man you met outside the cave. | |", Color.Cyan);
-                    Console.WriteLine("| |        As you look up you see the weird man you met outside the cave.            | |", Color.Cyan);
                     Console.WriteLine("| |             He also plays it cool and says only two words:                       | |", Color.Cyan);
                     Console.WriteLine("| |                                                                                  | |", Color.Cyan);
                     Console.WriteLine("| '----------------------------------------------------------------------------------' |", Color.Cyan);
@@ -399,11 +398,7 @@ namespace bandersnatch
 
             while (!notChosen)
             {
-                Console.WriteLine("Do you know what he talks about?");
-                Console.WriteLine("[yes] / [no]", Color.Green);
-                Console.Write("> ");
-
-                var userInput = Console.ReadLine().ToLower();
+                var userInput = ReadQuest("Do you know what he talks about?", "yes", "no", "Sorry, but that is not an alternative");
 
                 if (userInput == "yes")
                 {
@@ -531,10 +526,7 @@ namespace bandersnatch
 
             while(!notChosen)
             {
-                Console.WriteLine("You want to buy one. Do you have any money?");
-                Console.WriteLine("[yes] / [no]", Color.Green);
-
-                var userInput = Console.ReadLine().ToLower();
+                var userInput = ReadQuest("You want to buy one. Do you have any money?", "yes", "no", "Sorry, but that is not an alternative");
 
                 if(userInput == "yes")
                 {
@@ -599,11 +591,7 @@ namespace bandersnatch
 
             while (!notChosen)
             {
-                Console.WriteLine("You can now either go forward or look more in the bar. \nWhat do you do?");
-                Console.WriteLine("[forward] / [look]", Color.Green);
-                Console.Write("> ");
-
-                var userInput = Console.ReadLine().ToLower();
+                var userInput = ReadQuest("You can now either go forward or look more in the bar. What do you do?", "forward", "look", "Sorry, but that is not an alternative");
 
                 if (userInput == "forward")
                 {
@@ -639,11 +627,7 @@ namespace bandersnatch
 
             while (!notChosen)
             {
-                Console.WriteLine("Which way do you choose?");
-                Console.WriteLine("[scream] / [silence]", Color.Green);
-                Console.Write("> ");
-
-                var userInput = Console.ReadLine().ToLower();
+                var userInput = ReadQuest("Which way do you choose?", "scream", "silence", "Sorry, but that is not an alternative");
 
                 if (userInput == "scream")
                 {
