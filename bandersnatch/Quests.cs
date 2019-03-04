@@ -191,6 +191,34 @@ namespace bandersnatch
             "",
             "You died.",
             ""
+        };        
+
+        public List<string> HasPurse = new List<string>() {
+            "",
+            "You find some coins in the old cashier and realise why you have the purse.",
+            "You put the coins in the purse and continues.",
+            ""
+        };        
+
+        public List<string> HasNoPurse = new List<string>() {
+            "",
+            "You find some coins in the old cashier but don't know where to put them.",
+            "You have to leave the cashier.",
+            ""
+        };        
+
+        public List<string> Scream = new List<string>() {
+            "",
+            "There's a door on your left. You open it.",
+            ""
+        };        
+
+        public List<string> Ending = new List<string>() {
+            "",
+            "The next morning:",
+            "",
+            "You wake up and realise you had the most fucked up dream ever!",
+            ""
         };
 
 
