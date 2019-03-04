@@ -47,9 +47,9 @@ namespace bandersnatch
         };        
 
         public List<string> Right1 = new List<string>() {
-            "",
+            " ",
             "You can't make any sense out of it but put it in your pocket.",
-            ""
+            " "
         };       
 
         public List<string> Left = new List<string>() {
@@ -65,12 +65,12 @@ namespace bandersnatch
         };
 
         public List<string> Left2 = new List<string>() {
-            "",
+            " ",
             "You stop for a second as you see the passage is narrowing down.",
             "At the same time the flashlight start to flicker,",
             "you can't see the end of the passage and wonder",
-            "for how long you have to walk in this condition.",
-            ""
+            "for how long you have to walk in this condition. ",
+            " "
         };
 
         public List<string> Yes = new List<string>() {
