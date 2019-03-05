@@ -11,6 +11,9 @@ Build a game in C#.
 <b>Built in [Visual Studio](https://visualstudio.microsoft.com/vs/) with</b>
 - C# .Net
 
+Packages:
+- [Colorful.Console](https://github.com/tomakita/Colorful.Console)
+
 ## Story
 `The people of Winterfall has requested your
     help to enter the big and scary cave.
