@@ -61,9 +61,9 @@ namespace bandersnatch
                 var secondLineLength = longestRow - 6;
                 var dashes = new string('-', topLineLenght);
                 var secondDashes = new string('-', secondLineLength);
-
                 var topLine = $"{topConers}{dashes}{topConers}";
                 var secondLine = $"{topLeftCorner}{secondDashes}{topRightCorner}";
+
                 Console.WriteLine(topLine, Color.Cyan);
                 Console.WriteLine(secondLine, Color.Cyan);
 
@@ -86,9 +86,9 @@ namespace bandersnatch
                 var secondLineLength = longestRow - 6;
                 var dashes = new string('-', bottomLineLenght);
                 var secondDashes = new string('-', secondLineLength);
-
                 var topLine = $"{bottomCorners}{dashes}{bottomCorners}";
                 var secondLine = $"{bottomLeftCorner}{secondDashes}{bottomRightCorner}";
+
                 Console.WriteLine(secondLine, Color.Cyan);
                 Console.WriteLine(topLine, Color.Cyan);
             }
@@ -141,7 +141,6 @@ namespace bandersnatch
                     notChosen = true;
                     playerHasReceipt = true;
                     RightWay();
-
                 }
             }
         }
@@ -225,7 +224,6 @@ namespace bandersnatch
                         RunOrBackQuest();
                     }
                 }
-
             }
             else {
                 RunOrBackQuest();
@@ -258,14 +256,13 @@ namespace bandersnatch
 
                 if (userInput == "run")
                 {
+                    notChosen = true;
+
                     Console.Clear();
 
                     PrintQuest(Run);
 
-                    notChosen = true;
-
                     CoolOrCrawlQuest();
-
                 }
                 else if (userInput == "back")
                 {
@@ -276,9 +273,7 @@ namespace bandersnatch
                     PrintQuest(Back);
 
                     WayQuest();
-
                 }
-
             }
         }
 
@@ -446,7 +441,6 @@ namespace bandersnatch
                     StoryEnd();
                 }
             }
-
         }
 
         public void RightQuest()
@@ -465,14 +459,12 @@ namespace bandersnatch
                     notChosen = true;
 
                     SoundQuest();
-
                 }
                 else if (userInput == "look")
                 {
                     notChosen = true;
                     LookMoreInBarQuest();
                 }
-
             }
         }
 
@@ -566,6 +558,5 @@ namespace bandersnatch
                 StoryStart();
             }
         }
-
     }
 }
