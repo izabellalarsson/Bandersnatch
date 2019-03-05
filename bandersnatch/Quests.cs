@@ -213,15 +213,6 @@ namespace bandersnatch
             ""
         };        
 
-        public List<string> Ending = new List<string>() {
-            "",
-            "The next morning: ",
-            "",
-            "You wake up and realise you had the most fucked up dream ever!",
-            ""
-        };
-
-
         public Quests()
         {
         }
