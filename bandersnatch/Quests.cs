@@ -216,7 +216,5 @@ namespace bandersnatch
         public Quests()
         {
         }
-
-
     }
 }
