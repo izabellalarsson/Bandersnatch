@@ -17,7 +17,7 @@ Packages:
 ## Story
 `The people of Winterfall has requested your
     help to enter the big and scary cave.
-    You accept the quest.`
+    You accept the quest without knowing if you'll ever come out of it...`
 
 ## Installation
 
