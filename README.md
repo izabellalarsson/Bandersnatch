@@ -38,4 +38,4 @@ Feedback on the project is always welcome. Please [file an issue](https://github
 
 ## License
 
-[MIT](https://github.com/izabellalarsson/FuzzyMemory/blob/master/LICENSE) © [Izabella Larsson](https://github.com/izabellalarsson) & [Lovisa Hallgren](https://github.com/lovisahallgren)
+[MIT](https://github.com/izabellalarsson/Bandersnatch/blob/master/LICENSE) © [Izabella Larsson](https://github.com/izabellalarsson) & [Lovisa Hallgren](https://github.com/lovisahallgren)
